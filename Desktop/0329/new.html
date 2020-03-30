@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新しいランキングを作る</title>
+</head>
+<body>
+  <div>
+    <a href="/">ホームに戻る</a>
+  </div>
+
+  <form action="/new/" method="POST"><input type="hidden" name="csrfmiddlewaretoken" value="5WbLfFjtohJoneZ9RP85xYiRbo0mtZ5QvLVOz5QpuDgImX1T2bnawKWecpIXThqN">
+    <p><label for="id_title">Title:</label> <input type="text" name="title" maxlength="150" required id="id_title"></p>
+<p><label for="id_element">Element:</label> <textarea name="element" cols="40" rows="10" maxlength="8" id="id_element">
+</textarea></p>
+<p><label for="id_description">Description:</label> <textarea name="description" cols="40" rows="10" id="id_description">
+</textarea></p>
+    <button type="submit" class="btn">保存</button>
+  </form>
+</body>
+</html>
