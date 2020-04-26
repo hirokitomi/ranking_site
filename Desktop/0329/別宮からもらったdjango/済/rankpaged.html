@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% load static %} <!--これと下記の一文によってjavascriptを活用することが可能になった。-->
+  <!--<script src="{% static 'js/juni.js' %}" charset="utf-8"></script>-->
+  <title>ランキングサイトです。</title>
+</head>
+<body>
+  <h1 style="text-align: center;">{{ rankpage.title }}</h1>
+  <div style="width: 70%;margin: 0px auto;">
+    <div>
+      <div style="margin: 60px 20px;">
+        <p>↓このランキングについて↓</p>
+        {{ rankpage.description }}
+      </div>
+      <div style="margin: 60px 20px;text-align: center">
+        <table border="1">
+    <tr>
+      <th>順位</th>
+      <th>名前</th>
+      <th>{{ rankpage.element }}</th>
+      <th>偏差値</th>
+    </tr>
+    {% for Post_rank in a %}
+    <tr>
+      <td>{{ Post_rank.Post_juni }}位</td> <!--forloop.counterによってループした回数が与えられる-->
+      {% if Post_rank.Posteduser%}
+          <td><a href="{% url 'ranking:userpage' user_id=Post_rank.Posteduser.id%}">{{ Post_rank.Post_name }}</a></td>
+      {% else %}
+          <td>{{ Post_rank.Post_name }}</td>
+      {% endif %}
+      <td>{{ Post_rank.Post_element }}</td>
+      <td>{{ Post_rank.Post_hensati }}</td>
+    </tr>
+    {% empty %}
+    <p>投稿はありません</p>
+    {% endfor %}
+  </table>
+</div>
+
+<div style="text-align: center; margin-top: 50px">
+  <p>{{rankpage.title}}に参加しました。</p>
+
+  <!--ランキングに投稿した次のページ時のみ順位が表示される。-->
+  <h1>{{result|linebreaks}}</h1>
+
+
+  <h2>コメント一欄</h2>
+  <div id= "tuika"></div>
+  {% for i in post_coment %}
+  <p>{{i.Post_coment_name}} : {{i.Post_coment_text}}</p>
+  {% empty %}
+  <p>投稿はありません</p>
+  {% endfor %}
+  投稿者:<input id="coment-name-input" type="text" size="50"/><br/>
+  コメント:<input id="coment-coment-input" type="text" size="100"/><br/>
+  <input id="coment-submit" type="button" value="コメント"/>
+
+        <a href="{% url 'ranking:index' %}">トップページに戻る</a>
+      </div>
+</body>
+<script>
+    var ranking_page_name = String({{ ranking_page_json }});
+
+    var chatSocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/rankpaged/' + ranking_page_name + '/');
+    //var connection = new WebSocket(【通信を行うURL】);
+    //「ws://」と「wss://」の違いについてはセキュアな通信ができるかどうか？ということです。
+
+    chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var name = data['name'];
+        var coment = data['coment'];
+        //document.querySelector('#chat-log').value += (coment + '\n');
+        var tuikamese = document.getElementById('tuika');
+        tuikamese.innerHTML="<p>"+name+" : "+coment+"</p>"+tuikamese.innerHTML;
+    };
+
+    /*
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+    */
+
+    /*
+    document.querySelector('#chat-coment-input').focus();
+    document.querySelector('#chat-coment-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#chat-coment-submit').click();
+        }
+    };
+    */
+
+    document.querySelector('#coment-submit').onclick = function(e) {
+        var nameInputDom = document.querySelector('#coment-name-input');
+        var comentInputDom = document.querySelector('#coment-coment-input');
+        //入力値したelementを入手
+        var coment = comentInputDom.value;
+        var name = nameInputDom.value;
+        //実際のelementの値を入手。
+        chatSocket.send(JSON.stringify({
+            'coment': coment,
+            'name' : name
+        }));
+
+        comentInputDom.value = '';
+        nameInputDom.value = '';
+    };
+</script>
+</html>

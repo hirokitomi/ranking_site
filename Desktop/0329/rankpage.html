@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <script src="juni.js" charset="utf-8"></script>
+  <title>rankpageだよ</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <div class="header">
+    <div class="header_container">
+      <h1 class="header-headline">
+        <a><img src="img/logoBlack.svg" class="header_logo"></a>
+      </h1>
+      <!-- <ul class="header-nav-list">
+         <li class="header-nav-list-item">Home</li>
+         <li class="header-nav-list-item">About</li>
+         <li class="header-nav-list-item">Topic</li>
+      </ul> -->
+      <div class="header_right">
+        <div class="header_menu">
+          <div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+        <div class="header_account_logout">
+          <!-- <div class="header_userimg"><img src="img/key.jpeg" class="header_userimg"></div> -->
+          <div class="header_username">ログイン</div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="ranking">
+      <h2 class="ranking_title">フィンランド訪問回数</h2>
+      <div class="ranking_note">
+        行った回数を書き込んでください
+      </div>
+    </div>
+
+    <div class="article_container_sankasiyo">
+      <p class="sankasiyo">投稿してランキングに参加しよう！</p>
+      <form action="/rankpage/11/" method="POST">
+        <input type="hidden" name="csrfmiddlewaretoken" value="PuSJXGhJpdUKQUvsSd54eayptUwmMmLzfjCMh6OFvzr4PDxc3zk9dWcMuVeXcE6w">
+        <div class="cp_iptxt">
+          <label class="ef">
+            <input type="text" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="名前">
+          </label>
+        </div>
+        <div class="cp_iptxt">
+          <label class="ef">
+            <input type="number" name="Post_element" step="any" required id="id_Post_element" placeholder="回数">
+          </label>
+        </div>
+      </form>
+
+      <div class="article_contents_more">
+        <div class="article_more">
+          <a href="/rankpage/1/" class="article_more-a">送信！</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="ranking_comment_footer">
+
+  <div class="comment_more" id="commentMore">
+    <div class="comment_more-a" id="moreButtonText">コメントをさらに表示 <i class="fas fa-angle-up"></i></div>
+  </div>
+
+    <div class="comment_container" id="commentPanel">
+      <div class="comment_post_blank">
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">いちこめ。べっくふぃんらんどいきすぎわろた。</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">にこめ。ぶひぃ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">さんこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">よんこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">ごこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">ろくこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">ななこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">はちこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">きゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">じゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">きゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">じゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">きゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">じゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">きゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">じゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">ぶた</p>
+        <p class="comment_note">きゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+      <div class="comment_post">
+        <p class="comment_name">べっく</p>
+        <p class="comment_note">じゅうこめ</p>
+        <p class="comment_time">20/01/01 12:34</p>
+      </div>
+    </div>
+
+    <div class="commentform_container">
+
+      <form class="commentform_innner" action="/rankpage/11/" method="POST"><input type="hidden" name="csrfmiddlewaretoken" value="PuSJXGhJpdUKQUvsSd54eayptUwmMmLzfjCMh6OFvzr4PDxc3zk9dWcMuVeXcE6w">
+        <div class="cp_iptxt_commentname">
+          <label class="ef_comment">
+            <input type="text" name="Post_coment_name" maxlength="10" required id="id_Post_coment_name" placeholder="名前">
+          </label>
+        </div>
+        <div class="cp_iptxt_comment">
+          <label class="ef_comment">
+            <input type="text" name="Post_coment_text" maxlength="300" required id="id_Post_coment_text" placeholder="コメント">
+          </label>
+        </div>
+        <button type="submit" class="comment_btn">送信</button>
+      </form>
+    </div>
+
+
+  </div>
+
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>

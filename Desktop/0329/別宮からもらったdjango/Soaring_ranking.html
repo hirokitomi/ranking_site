@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <meta charset="utf-8">
+  <title>ランキングサイトです。</title>
+</head>
+<body>
+
+<h1>急上昇ランキング一覧</h1>
+<a href="{% url 'ranking:index' %}">トップページに戻る</a>
+    {% for a in create_ranking_list %}
+  <div class="article_container">
+    <div class="article_link">
+      <a href="{% url 'ranking:rankpage' ranking_id=a.id %}">
+        <div class="article_contents">
+          <h2 class="article_sentenses article_title">{{ a.title }}</h2>
+          <p class="article_sentenses article_participants">参加者:{{a.Posts.count}}人</p>
+          <p class="article_sentenses article_participants">コメント:{{a.Posts_coment.count}}</p>
+          <p class="article_sentenses article_note">{{ a.description | truncatechars:100 }}</p>
+        </div>
+      </a>
+    </div>
+
+    {% endfor %}
+  </div>
+  <!-- 前への部分-->
+  {% if page_obj.has_previous %}
+      <a href = "?page={{ page_obj.previous_page_number }}">前へ</a>
+  {% endif %}
+
+  <!-- 数字の部分-->
+  {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+          <span>{{ num }}</span>
+      {% else %}
+          <a href = "?page={{ num }}">{{num}}</a>
+      {% endif %}
+  {% endfor %}
+
+  <!-- 次への部分-->
+  {% if page_obj.has_next %}
+    <a href = "?page={{ page_obj.next_page_number }}">次へ</a>
+  {% endif %}
+
+</body>
+
+</html>

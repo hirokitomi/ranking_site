@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新しいランキングを作る</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div>
+    <a href="{% url 'ranking:index' %}">ホームに戻る</a>
+  </div>
+  <h1>ユーザー情報</h1>
+  <p>{% if userinfo.first_name %}
+    <img src="{{ userinfo.socialaccount_set.all.0.get_avatar_url }}" />
+        名前:{{userinfo.first_name}}
+        <p>Twitter ID:<a href="https://twitter.com/{{userinfo.username}}">{{userinfo.username}}</a></p>
+     {% else %}
+        名前:{{userinfo.username}}
+  </p>{% endif %}
+  <h2>作成したランキング一覧</h2>
+  <p>{% if not Createdranking %}
+        ランキングを作成したことがありません。
+     {% else %}
+        {% for i in Createdranking %}
+        <p><a href="{% url 'ranking:rankpaged' ranking_id=i.id%}">{{i}}</a></p>
+        {% endfor %}
+        <p><a href="{% url 'ranking:Created_ranking_user' pk=userinfo.pk %}">作成したランキングをさらに表示</a></p>
+  </p>{% endif %}
+
+  <h2>参加したランキング一覧</h2>
+  <p>{% if not Postedranking %}
+        ランキングを作成したことがありません。
+     {% else %}
+        {% for i in Postedranking %}
+        <p><a href="{% url 'ranking:rankpaged' ranking_id=i.article.id%}">{{i.article}}</a> 順位:{{i.Post_juni}}位 偏差値:{{i.Post_hensati}}</p>
+        {% endfor %}
+        <p><a href="{% url 'ranking:Posted_ranking_user' pk=userinfo.pk %}">参加したランキングをさらに表示</a></p>
+  </p>{% endif %}
+</body>
+</html>

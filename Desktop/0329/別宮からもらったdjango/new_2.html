@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新しいランキングを作る</title>
+  <meta charset="utf-8">
+  {% load account %}
+</head>
+<body>
+  <div>
+    <a href="{% url 'ranking:index' %}">ホームに戻る</a>
+  </div>
+
+  <form action="{% url 'ranking:new' %}" method="POST">{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn">保存</button>
+  </form>
+</body>
+</html>

@@ -1,5 +1,6 @@
 :root{
   --fontsize-title: 24px;
+  --fontsize-middle: 20px;
   --fontsize-note: 16px;
 
   --hover-transition: 0.2;
@@ -24,10 +25,126 @@ a{
 
 .main{
   width:800px;
-  margin:0px auto 182px;
+  margin:0px auto 32px;
   font-weight: 600;
   font-family: Hiragino Kaku Gothic Std;
   /* background-color: red; */
+}
+
+/* ======== header ======== */
+.header{
+  /* min-height: 72px; */
+  border-bottom: 1px solid #CDCDCD;
+  padding: 10px 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  font-weight: 600;
+  font-family: Hiragino Kaku Gothic Std;
+  /* height: 48px; */
+}
+.header_container{
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_logo{
+  width: 85px;
+  height: 30px;
+  background-color: white;
+  margin-left: 24px;
+}
+.header-headline{
+  margin: 0;
+}
+.header-headline a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_right{
+  display: flex;
+}
+.header_menu a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.header_menu{
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #565656;
+  border-radius: 17px;
+  margin-right: 12px;
+  width: 30px;
+  text-align: center;
+}
+.header_menuicon{
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+  color: #565656;
+}
+.header_account{
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: #565656;
+  border-radius: 17px;
+  padding: 2px;
+}
+.header_account_logout{
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: #00afcc;
+  border-radius: 17px;
+  padding: 2px;
+}
+.header_account a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.header_account_logout a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.header_userimg{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  /* margin-right: 12px; */
+}
+.header_username{
+  list-style: none;
+  display: inline-block;
+  margin: 0 12px 0;
+  font-size: 12px;
+}
+.header-nav-list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 0;
+}
+.header-nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 12px;
 }
 
 /* ========mainly dealing with index.html========= */
@@ -35,12 +152,12 @@ a{
 .category{
   /* width: 800px; */
   margin: 32px auto 0;
-  background-color: #454545;
+  background-color: #565656;
 }
 
 .category_title{
   margin: 0;
-  padding: 8px 40px;
+  padding: 18px 40px;
   color: white;
   font-size: var(--fontsize-title);
 }
@@ -74,7 +191,7 @@ a{
 
 .article_contents{
   height: 24px;
-  padding: 8px 28px;
+  padding: 12px 28px;
 }
 
 .article_contents_more{
@@ -131,9 +248,10 @@ a{
   font-size: var(--fontsize-note);
   margin: 0 auto;
   text-align: center;
-  border-radius: var(--border-radius);
-  border: 1px solid #565656;
-  color: #454545;
+  border-radius: 20px;
+  border: 2px solid #565656;
+  color: #565656;
+  padding: 6px 0;
 }
 
 .article_more-a{
@@ -151,9 +269,10 @@ a{
   float: right;
   text-align: right;
   display: inline-block;
-  vertical-align: middle;
-  font-size: var(--fontsize-note);
+  font-size: 14px;
   font-family: HiraKakuProN-W6;
+  line-height: 24px;
+  height: 24px;
   margin: 0 12px 0 0;
   padding: 0 12px;
   border-radius: var(--border-radius);
@@ -166,19 +285,19 @@ a{
 .ranking{
   /* width: 800px; */
   margin: 32px auto 0;
-  background-color: #454545;
+  background-color: #565656;
 }
 
 .ranking_title{
   margin: 0;
-  padding: 12px 40px 0px 40px;
+  padding: 18px 80px 12px 80px;
   color: white;
   font-size: var(--fontsize-title);
 }
 
 .ranking_note{
   margin: 0;
-  padding: 0px 40px 12px 40px;
+  padding: 0px 80px 18px 80px;
   color: white;
   font-size: var(--fontsize-note);
   font-family: HiraKakuProN-W6;
@@ -194,7 +313,22 @@ table{
   margin: 0 auto;
 }
 
-table th, td{
+table th{
+  /* float: inherit; */
+  height: 24px;
+  border: none;
+  padding: 8px 12px;
+  /* float: left;
+  display: inline-block; */
+  vertical-align: middle;
+  font-size: var(--fontsize-note);
+  font-weight: bold;
+  text-align: center;
+  border-bottom: #d3d3d3 dotted 1px;
+  color: #787878;
+}
+
+table td{
   /* float: inherit; */
   height: 24px;
   border: none;
@@ -222,12 +356,67 @@ table th, td{
 }
 
 .table_ranking_name{
-  width: 300px;
+  max-width: 240px;
   /* float: left; */
 }
 
-.table_ranking_value{
-  /* float: right; */
+.table_applicable{
+  background-color: yellow;
+  /* border: 1px solid red; */
+}
+
+/* 参加済み私的ユーザーの情報表示 */
+.rank_account{
+  width: 640px;
+  display: flex;
+  position: relative;
+  /* padding: 2px; */
+  margin: 12px 80px;
+  justify-content: center;
+  align-items: center;
+  color: #363636;
+}
+.rank_userimg{
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.rank_username{
+  display: inline-block;
+  list-style: none;
+  margin: 0 24px 0;
+  font-size: var(--fontsize-middle);
+}
+
+/* rank_result */
+.rank_result{
+  width: 640px;
+  display: flex;
+  position: relative;
+  /* padding: 2px; */
+  margin: 12px 80px;
+  justify-content: center;
+  align-items: center;
+  color: #363636;
+}
+.rank_result_number{
+  display: inline-block;
+  list-style: none;
+  margin: 0 12px 0 0;
+  font-size: var(--fontsize-middle);
+}
+.rank_result_element{
+  display: inline-block;
+  list-style: none;
+  margin: 0 12px 0 18px;
+  font-size: var(--fontsize-middle);
+}
+.rank_result_deviation{
+  display: inline-block;
+  list-style: none;
+  margin: 0 0 0 12px;
+  font-size: var(--fontsize-note);
 }
 
 /* === ranking inputform === */
@@ -244,9 +433,9 @@ table th, td{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #454545;
+	color: #565656;
 	border: none;
-	border-bottom: 1px dotted #454545;
+	border-bottom: 1px dotted #565656;
 	background: transparent;
 }
 
@@ -262,9 +451,9 @@ table th, td{
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #454545;
+	color: #565656;
 	border: none;
-	border-bottom: 1px dotted #454545;
+	border-bottom: 1px dotted #565656;
 	background: transparent;
 }
 
@@ -277,32 +466,87 @@ table th, td{
   /* width: 800px; */
   /* padding: 0 50px; */
   padding-top: 8px;
+  padding-bottom: 8px;
   /* margin: 0px auto; */
   /* background-color: red; */
   background-color: #f5f5f5;
   position: relative;
   display: inline-block;
-  padding-bottom: 1em;
 }
 /* ===== inputform end ===== */
 
-.article_container_sankasiyo:before {
+/* 検索フォーム */
+.article_container_search{
+  width: 800px;
+  /* padding: 0 50px; */
+  /* padding: 8px 0 8px; */
+  /* margin: 0px auto; */
+  /* background-color: red; */
+  background-color: #f5f5f5;
+  position: relative;
+  display: inline-block;
+  margin-top: 32px;
+}
+
+.cp_iptxt2 {
+	position: relative;
+	width: 640px;
+	margin: 30px 80px;
+}
+.cp_iptxt2 input[type='text'] {
+	font: 15px/24px Hiragino Kaku Gothic Std;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #565656;
+	border: none;
+	border-bottom: 1px dotted #565656;
+	background: transparent;
+  padding: 5px;
+}
+
+.ef2 input[type='text']:focus {
+	border-bottom: 1px solid #da3c41;
+	outline: none;
+  padding: 5px;
+}
+
+.sbtn2{
+  height: 35px;
+  position: absolute;
+  left: 686px;/*アイコン左右の位置調整*/
+  top: 30px;
+  background: none;
+  color: #565656;
+  border: none;
+  font-size: 20px;/*アイコンサイズ*/
+}
+
+/* bottom:線の上下位置、width:線の長さ、height:線の太さ、transform:位置調整、background:線の色 */
+/* .article_container_sankasiyo:before {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: 0px;/*線の上下位置*/
+  bottom: 0px;
   display: inline-block;
-  width: 85%;/*線の長さ*/
-  height: 1px;/*線の太さ*/
+  width: 85%;
+  height: 1px;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);/*位置調整*/
-  background-color: #454545;/*線の色*/
-}
+  transform: translateX(-50%);
+  background-color: #565656;
+} */
 
 .sankasiyo{
   font-size: var(--fontsize-note);
   text-align: center;
-  color: #454545;
+  color: #565656;
+}
+
+.comment_150px{
+  width: 100%;
+  height: 150px;
 }
 
 .ranking_comment_footer{
@@ -326,7 +570,7 @@ table th, td{
 }
 
 .comment_container.comment_open{
-  height: 400px;
+  height: 50vh;
 }
 
 .comment_post_blank{
@@ -386,7 +630,7 @@ table th, td{
   text-align: center;
   border-radius: 6px;
   border: 1px solid #565656;
-  color: #454545;
+  color: #565656;
   background-color: #FFFFFF;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -463,4 +707,74 @@ table th, td{
 .comment_btn:hover{
   background-color: #FFFFFF;
   color: #565656;
+}
+
+/* userpage */
+
+.article_container_userpage{
+  /* width: 800px; */
+  /* padding: 0 50px; */
+  padding-top: 8px;
+  padding-bottom: 8px;
+  /* margin: 0px auto; */
+  /* background-color: red; */
+  background-color: #f5f5f5;
+  position: relative;
+  display: inline-block;
+  margin-top: 32px;
+}
+
+.userpage_account{
+  width: 640px;
+  display: flex;
+  position: relative;
+  /* padding: 2px; */
+  margin: 36px 80px;
+  /* justify-content: center; */
+  align-items: center;
+  color: #363636;
+  min-height: 120px;
+}
+.userpage_img{
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+.userpage_name{
+  display: inline-block;
+  list-style: none;
+  margin: 3px 48px 12px;
+  font-size: var(--fontsize-title);
+}
+.userpage_introduction{
+  display: inline-block;
+  list-style: none;
+  margin: 3px 48px 3px;
+  font-size: 14px;
+  font-family: HiraKakuProN-W6;
+}
+.userpage_twitter{
+  font-size: 14px;
+  font-family: HiraKakuProN-W6;
+  margin: 3px 0 3px 48px;
+  color: #787878;
+  /* display: inline-block; */
+}
+.userpage_link{
+  font-size: 14px;
+  font-family: HiraKakuProN-W6;
+  margin: 3px 48px 3px 48px;
+  color: #787878;
+  /* display: inline-block; */
+}
+.sbtn3{
+  height: 35px;
+  position: absolute;
+  right: 10px;/*アイコン左右の位置調整*/
+  bottom: 10px;
+  background: none;
+  color: #565656;
+  border: none;
+  font-size: 20px;/*アイコンサイズ*/
 }

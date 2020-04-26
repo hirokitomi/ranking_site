@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ランキングサイトです。</title>
+</head>
+<body>
+<a href="{% url 'ranking:index' %}">トップページに戻る</a>
+<p>検索結果</p>
+{% for s in create_ranking_list %}
+<p><a href="{% url 'ranking:rankpage' s.id %}">{{s.title}}</a>参加者:{{s.post_count}}人コメント数:{{s.coment_count}}</p>
+{% endfor %}
+<!-- 前への部分-->
+{% if page_obj.has_previous %}
+    <a href = "?csrfmiddlewaretoken={{AAA}}&keyword={{key}}&page={{ page_obj.previous_page_number }}">前へ</a>
+{% endif %}
+
+<!-- 数字の部分-->
+{% for num in page_obj.paginator.page_range %}
+    {% if page_obj.number == num %}
+        <span>{{ num }}</span>
+    {% else %}
+        <a href = "?csrfmiddlewaretoken={{AAA}}&keyword={{key}}&page={{ num }}">{{num}}</a>
+    {% endif %}
+{% endfor %}
+
+<!-- 次への部分-->
+{% if page_obj.has_next %}
+  <a href = "??csrfmiddlewaretoken={{AAA}}&keyword={{key}}&page={{ page_obj.next_page_number }}">次へ</a>
+{% endif %}
+
+</body>
+
+</html>
