@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <title>Soaring_rankingだよ</title>
+</head>
+
+<body>
+
+  <!-- <p>ランキングサイトです。</p>
+  <a href ="/new/">新しいランキングを作る</a>
+  <hr/> -->
+
+  <!-- header -->
+  <div class="header">
+    <div class="header_container">
+      <h1 class="header-headline">
+        <a><img src="img/logoBlack.svg" class="header_logo"></a>
+      </h1>
+      <div class="header_right">
+        <div class="header_menu">
+          <div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+        <div class="header_account">
+          <div class="header_userimg"><img src="img/user.jpg" class="header_userimg"></div>
+          <div class="header_username">べっくは性欲オバケ！</div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="main">
+
+      <div class="category">
+        <h2 class="category_title">急上昇ランキング</h2>
+      </div>
+
+      <div class="article_container">
+
+        <article class="article_link"><!-- 記事ひとかたまり。 -->
+          <a href="/rankpage/1/">
+            <div class="article_contents">
+              <!-- 順位表示。新着等では以下一行はコメントアウト。 -->
+              <h3 class="article_number number1">1</h2>
+              <h3 class="article_title">速球ランキング</h2>
+              <p class="article_note">野球ボールの投aaaaああああああ</p>
+              <p class="article_participants">123455人</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- リスト最後尾余白 -->
+        <div class="list_end_8px">
+        </div>
+
+      </div>
+
+      <!-- ページ切り替えスイッチ部 -->
+      <div class="list_switch">
+        <div class="list_switch_container">
+          <div class="listswitch_text unclick_gray">最前部</div>
+          <div class="listswitch_text unclick_gray"><i class="fas fa-chevron-left"></i>前へ</div>
+          <!-- クリックができない場合には以上2つの"unclick_gray"を適用したい。これは最前(1)の例だが、最後も同様。 -->
+          <div class="listswitch_numberbox">
+            <!-- 以下数字リスト。現在いるページにあたる数字には"listswitch_number_now"を指定、文字色及びweightを変更して強調する。 -->
+            <div class="listswitch_numbercontainer">
+              <div class="listswitch_number listswitch_number_now">1</div>
+              <div class="listswitch_number">2</div>
+              <div class="listswitch_number">3</div>
+              <div class="listswitch_number">4</div>
+              <div class="listswitch_number">5</div>
+            </div>
+            <!-- 数字リストここまで。 -->
+            <!-- ページ数が極端に少ない場合(ex.1と2のみ)でも動作する。divを5つ記述する必要はない。 -->
+          </div>
+          <div class="listswitch_text">次へ<i class="fas fa-chevron-right"></i></div>
+          <div class="listswitch_text">最後部</div>
+        </div>
+      </div>
+
+    </div>
+</body>
+
+</html>
