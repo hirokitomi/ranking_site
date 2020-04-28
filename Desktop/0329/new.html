@@ -1,20 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>新しいランキングを作る</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <title>newだよ</title>
 </head>
+
 <body>
-  <div>
-    <a href="/">ホームに戻る</a>
+
+  <!-- <p>ランキングサイトです。</p>
+  <a href ="/new/">新しいランキングを作る</a>
+  <hr/> -->
+
+  <!-- header -->
+  <div class="header">
+    <div class="header_container">
+      <h1 class="header-headline">
+        <a><img src="img/logoBlack.svg" class="header_logo"></a>
+      </h1>
+      <!-- <ul class="header-nav-list">
+         <li class="header-nav-list-item">Home</li>
+         <li class="header-nav-list-item">About</li>
+         <li class="header-nav-list-item">Topic</li>
+      </ul> -->
+      <div class="header_right">
+        <div class="header_menu">
+          <div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+        <div class="header_account">
+          <div class="header_userimg"><img src="img/user.jpg" class="header_userimg"></div>
+          <div class="header_username">べっくは性欲オバケ！</div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <form action="/new/" method="POST"><input type="hidden" name="csrfmiddlewaretoken" value="5WbLfFjtohJoneZ9RP85xYiRbo0mtZ5QvLVOz5QpuDgImX1T2bnawKWecpIXThqN">
-    <p><label for="id_title">Title:</label> <input type="text" name="title" maxlength="150" required id="id_title"></p>
-<p><label for="id_element">Element:</label> <textarea name="element" cols="40" rows="10" maxlength="8" id="id_element">
-</textarea></p>
-<p><label for="id_description">Description:</label> <textarea name="description" cols="40" rows="10" id="id_description">
-</textarea></p>
-    <button type="submit" class="btn">保存</button>
-  </form>
+    <div class="main">
+
+      <div class="category">
+        <h2 class="category_title">ランキング作成</h2>
+      </div>
+
+      <div class="article_container">
+        <div class="cp_iptxt3">
+          <label class="ef3">
+            <input type="text" class="new_title" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="タイトル">
+          </label>
+          <label class="ef3">
+            <textarea name="Post_name" required id="id_Post_name" placeholder="ランキングの説明"></textarea>
+            <input type="text" class="new_element" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="要素">
+            <input type="text" class="new_element" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="単位">
+            <input type="number" class="new_number" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="最小値">
+            <input type="number" class="new_number" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="最大値">
+          </label>
+        </div>
+
+        <div class="new_checkboxes">
+          <input type="checkbox" id="box-1">
+          <label for="box-1">ランキングを昇順にする</label>
+
+          <input type="checkbox" id="box-2" checked>
+          <label for="box-2">小数値での入力を求める</label>
+        </div>
+
+        <!-- もっと見る -->
+        <article class="article_link_more">
+            <div class="article_contents_more">
+                <div class="article_more">
+                  <a href="/rankpage/1/" class="article_more-a">
+                    作成
+                  </a>
+                </div>
+              </a>
+            </div>
+        </article>
+
+      </div>
+
+      </div>
+    </div>
 </body>
+
 </html>
