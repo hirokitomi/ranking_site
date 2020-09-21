@@ -28,10 +28,11 @@ a{
 
 .main{
   width:800px;
-  margin:0px auto 32px;
+  margin: 95px auto 40px;
   font-weight: 600;
-  font-family: Hiragino Kaku Gothic Std;
+  font-family: HiraKakuProN-W6;
   /* background-color: red; */
+  z-index: 1;
 }
 
 /* ======== header ======== */
@@ -43,11 +44,20 @@ a{
   background-color: white;
   color: white;
   font-weight: 600;
-  font-family: Hiragino Kaku Gothic Std;
+  font-family: HiraKakuProN-W6;
+
+  position: fixed;            /* ヘッダーの固定 */
+  top: 0px;                   /* 位置(上0px) */
+  left: 0px;                  /* 位置(右0px) */
+  width: 100%;                /* 横幅100%　*/
   /* height: 48px; */
+
+  z-index: 2;
 }
+
 .header_container{
   max-width: 800px;
+  height: 34px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -69,6 +79,7 @@ a{
 }
 .header_right{
   display: flex;
+  height: 34px;
 }
 .header_menu a {
   position: absolute;
@@ -94,6 +105,128 @@ a{
   text-align: center;
   color: #565656;
 }
+
+/* === headermenubox === */
+.header_menucorner{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  transform: translate(-28px, 27px) rotate(-45deg);
+  border: 1px solid #ABABAB;
+  border-radius: 5px;
+}
+
+.header_menucorner2{
+  position: absolute;
+  width: 28px;
+  height: 1px;
+  background-color: white;
+  transform: translate(-29px, 37px);
+  z-index: 3;
+}
+
+.header_menubox{
+  width: 250px;
+  position: absolute;
+  color: black;
+  background-color: white;
+  top: 60px;
+  font-size: 12px;
+  transform: translate(-141px, -8px);
+  border: 1px solid #ABABAB;
+  border-radius: 5px;
+}
+
+.header_menulist{
+  /* background-color: yellow; */
+  margin: 16px 32px;
+  position: relative;
+  text-align: left;
+}
+
+.header_menulist a{
+  position: absolute;
+}
+
+.header_menulist:hover{
+  opacity: var(--hover-opacity);
+}
+
+.header_menuborder{
+  height:1px;
+  border-bottom: 1px solid #ABABAB;
+  margin: 0 32px;
+}
+
+.header_menu label {
+    /* background: blue; */
+    width: 34px;
+}
+
+/*チェックは見えなくする*/
+.header_menu input[type:checkbox] {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.header_menu .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    /* opacity: 0.5; */
+    visibility:hidden;
+    /* transform: translate(0px, 50px); */
+}
+
+/*クリックで中身表示*/
+.header_menu input:checked ~ .hidden_show {
+    padding: 10px 0;
+    height: auto;
+    /* opacity: 1; */
+    visibility:visible;
+}
+
+dl.search1{
+	position:relative;
+	background-color:#fff;
+	border:1px solid #aaa;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	-o-border-radius:6px;
+	-ms-border-radius:6px;
+	border-radius:6px;
+  margin: 16px 32px;
+}
+dl.search1 dt{
+	margin-right:40px;
+	padding:8px 0 8px 8px;
+}
+dl.search1 dt input{
+	width:100%;
+	height:24px;
+	line-height:24px;
+	background:none;
+	border:none;
+}
+dl.search1 dd{
+	position:absolute;
+	top:0;
+	right:0;
+}
+dl.search1 dd button{
+	display:block;
+	padding:10px;
+	background:none;
+	border:none;
+}
+dl.search1 dd button span{
+	display:block;
+	width:20px;
+	height:20px;
+	background:url('../img/search.svg') no-repeat scroll 0 0;
+}
+
 .header_account{
   display: flex;
   position: relative;
@@ -166,12 +299,16 @@ a{
 }
 
 .article_container{
-  /* width: 800px; */
-  /* padding: 0 50px; */
-  padding-top: 8px;
+  width: 640px;
+  padding: 20px 80px;
   /* margin: 0px auto; */
   /* background-color: red; */
   background-color: #f5f5f5;
+  position: relative;
+}
+
+.flex{
+  display: flex;
 }
 
 .article_link{
@@ -179,6 +316,8 @@ a{
   background-color: #f5f5f5;
   margin: 0;
   clear: both;
+  position: relative;
+  /* display: inline-block; */
 }
 
 .article_link:hover{
@@ -194,11 +333,14 @@ a{
 
 .article_contents{
   height: 24px;
-  padding: 12px 68px;
+  padding: 12px 0;
+  /* position: relative;
+  display: inline-block; */
 }
 
 .article_contents_more{
-  padding: 8px 40px 16px 40px;
+  margin: 40px 0 20px;
+  width: 100%;
 }
 
 .article_number{
@@ -206,7 +348,7 @@ a{
   display: inline-block;
   vertical-align: middle;
   font-size: var(--fontsize-note);
-  margin: 0 0 0 12px;
+  margin: 0;
   width: 24px;
   height: 24px;
   border-radius: 12px;
@@ -248,17 +390,19 @@ a{
   width: 120px;
   float: none;
   vertical-align: middle;
-  font-size: var(--fontsize-note);
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 20px;
-  border: 2px solid #565656;
   color: #565656;
+  font-family: HiraKakuProN-W6;
+  font-size: var(--fontsize-note);
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid #565656;
   padding: 6px 0;
+  background: transparent;
 }
 
 .article_more-a{
-  display: block;
+  /* display: block; */
   padding: 0;
 }
 
@@ -283,24 +427,42 @@ a{
   color: white;
 }
 
+
+
 /* ========mainly dealing with ranking.html========= */
 
 .ranking{
-  /* width: 800px; */
-  margin: 32px auto 0;
+  width: 640px;
+  /* margin: 0 auto; */
+  padding: 12px 80px;
   background-color: #565656;
 }
 
 .ranking_title{
   margin: 0;
-  padding: 18px 80px 12px 80px;
+  display: inline-block;
+  padding: 6px 0 6px 0;
   color: white;
   font-size: var(--fontsize-title);
 }
 
+.ranking_author{
+  display: inline-block;
+  color: #BBB;
+  padding:6px 0 6px 0;
+  font-size: var(--fontsize-note);
+  font-family: HiraKakuProN-W6;
+}
+
+.ranking_authorname{
+  display: inline-block;
+  color: #BBB;
+  padding-left: 6px;
+}
+
 .ranking_note{
   margin: 0;
-  padding: 0px 80px 18px 80px;
+  padding: 6px 0 6px 0;
   color: white;
   font-size: var(--fontsize-note);
   font-family: HiraKakuProN-W6;
@@ -308,12 +470,12 @@ a{
 
 /* ==== table ======*/
 table{
-  width : 80%;
+  width : 100%;
   border: none;
   color: #363636;
   background-color: #f5f5f5;
   padding: 8px 0;
-  margin: 0 auto;
+  margin: 0;
 }
 
 table th{
@@ -370,11 +532,11 @@ table td{
 
 /* 参加済み私的ユーザーの情報表示 */
 .rank_account{
-  width: 640px;
+  width: 100%;
   display: flex;
   position: relative;
   /* padding: 2px; */
-  margin: 12px 80px;
+  margin: 12px 0;
   justify-content: center;
   align-items: center;
   color: #363636;
@@ -393,44 +555,72 @@ table td{
 }
 
 /* rank_result */
-.rank_result{
-  width: 640px;
+.rank_resultall{
   display: flex;
-  position: relative;
+  margin: 32px auto 0;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.rank_result_box{
+  min-width: 100px;
+  height: 64px;
+  padding: 0 12px;
+  /* background-color: yellow; */
+}
+
+.resultbox_center{
+  border-left: 1px solid #565656;
+  border-right: 1px solid #565656;
+}
+
+.rank_result_title{
+  color: #565656;
+  margin: 6px 0;
+  font-size: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.rank_result_unit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px 0;
+  justify-content: center;
+}
+
+.rank_result{
+  font-size: var(--fontsize-middle);
+  bottom: 0;
+  display: flex;
   /* padding: 2px; */
-  margin: 12px 80px;
   justify-content: center;
   align-items: center;
   color: #363636;
+  /* background-color: red; */
+  padding: 0 4px;
 }
-.rank_result_number{
-  display: inline-block;
-  list-style: none;
-  margin: 0 12px 0 0;
-  font-size: var(--fontsize-middle);
-}
-.rank_result_element{
-  display: inline-block;
-  list-style: none;
-  margin: 0 12px 0 18px;
-  font-size: var(--fontsize-middle);
-}
-.rank_result_deviation{
-  display: inline-block;
-  list-style: none;
-  margin: 0 0 0 12px;
-  font-size: var(--fontsize-note);
+
+.rank_resultcnt{
+  font-size: calc(var(--fontsize-middle)*0.5);
+  bottom: 0;
+  text-align: center;
+  /* background-color: blue; */
+  padding: 0 4px;
 }
 
 /* === ranking inputform === */
 
 .cp_iptxt {
 	position: relative;
-	width: 640px;
-	margin: 30px 80px;
+	width: 100%;
+	margin: 20px 0;
 }
-.cp_iptxt input[type='text'] {
-	font: 15px/24px Hiragino Kaku Gothic Std;
+.cp_iptxt input{
+	font: 15px/24px HiraKakuProN-W6;
 	box-sizing: border-box;
 	width: 100%;
 	padding: 0.3em;
@@ -442,34 +632,14 @@ table td{
 	background: transparent;
 }
 
-.ef input[type='text']:focus {
-	border-bottom: 1px solid #da3c41;
-	outline: none;
-}
-
-.cp_iptxt input[type='number'] {
-	font: 15px/24px Hiragino Kaku Gothic Std;
-	box-sizing: border-box;
-	width: 100%;
-	padding: 0.3em;
-	transition: 0.3s;
-	letter-spacing: 1px;
-	color: #565656;
-	border: none;
-	border-bottom: 1px dotted #565656;
-	background: transparent;
-}
-
-.ef input[type='number']:focus {
+.ef input:focus {
 	border-bottom: 1px solid #da3c41;
 	outline: none;
 }
 
 .article_container_sankasiyo{
-  /* width: 800px; */
-  /* padding: 0 50px; */
-  padding-top: 8px;
-  padding-bottom: 8px;
+  width: 640px;
+  padding: 20px 80px;
   /* margin: 0px auto; */
   /* background-color: red; */
   background-color: #f5f5f5;
@@ -497,7 +667,7 @@ table td{
 	margin: 30px 80px;
 }
 .cp_iptxt2 input[type='text'] {
-	font: 15px/24px Hiragino Kaku Gothic Std;
+	font: 15px/24px HiraKakuProN-W6;
 	box-sizing: border-box;
 	width: 100%;
 	padding: 0.3em;
@@ -547,6 +717,33 @@ table td{
   color: #565656;
 }
 
+.login_left{
+  width: 400px;
+  padding-right: 60px;
+  border-right: 1px solid #ABABAB;
+}
+
+.login_right{
+  /* width: 160px; */
+  position: relative;
+  padding-left: 60px;
+}
+
+.login_right_note{
+  margin-top: 24.5px;
+  /* margin: auto 0; */
+  /* position: absolute; */
+  /* top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%); */
+}
+
+.login_note{
+  font-size: calc(var(--fontsize-note)*0.8);
+  color: #565656;
+}
+
 .comment_150px{
   width: 100%;
   height: 150px;
@@ -561,7 +758,7 @@ table td{
   width: 100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0px, rgba(0,0,0,0.65) 22.5px, rgba(0,0,0,0.8) 100%);
   color: white;
-  font-family: Hiragino Kaku Gothic Std;
+  font-family: HiraKakuProN-W6;
 }
 
 .comment_container{
@@ -683,7 +880,7 @@ table td{
 	margin: 10px 10px 10px 80px;
 }
 .cp_iptxt_commentname input[type='text'] {
-	/* font: 16px Hiragino Kaku Gothic Std; */
+	/* font: 16px HiraKakuProN-W6; */
   font-family: HiraKakuProN-W6;
   font-size: calc(var(--fontsize-note)*0.8);
 	box-sizing: border-box;
@@ -728,11 +925,11 @@ table td{
 }
 
 .userpage_account{
-  width: 640px;
+  /* width: 640px; */
   display: flex;
   position: relative;
   /* padding: 2px; */
-  margin: 36px 80px;
+  margin: 16px 0;
   /* justify-content: center; */
   align-items: center;
   color: #363636;
@@ -743,34 +940,39 @@ table td{
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  margin-right: 48px;
 }
 .userpage_name{
   display: inline-block;
   list-style: none;
-  margin: 3px 48px 12px;
+  margin: 3px 0 12px;
   font-size: var(--fontsize-title);
 }
 .userpage_introduction{
   display: inline-block;
   list-style: none;
-  margin: 3px 48px 3px;
+  margin: 3px 0 3px;
   font-size: 14px;
   font-family: HiraKakuProN-W6;
 }
 .userpage_twitter{
   font-size: 14px;
   font-family: HiraKakuProN-W6;
-  margin: 3px 0 3px 48px;
+  margin: 3px 0;
   color: #787878;
   /* display: inline-block; */
 }
 .userpage_link{
   font-size: 14px;
   font-family: HiraKakuProN-W6;
-  margin: 3px 48px 3px 48px;
+  margin: 3px 0;
   color: #787878;
   /* display: inline-block; */
 }
+.userpage_linkicon{
+  margin-right: 8px;
+}
+
 .sbtn3{
   height: 35px;
   position: absolute;
@@ -780,6 +982,46 @@ table td{
   color: #565656;
   border: none;
   font-size: 20px;/*アイコンサイズ*/
+}
+
+.repost{
+  width: 100px;
+  height: 35px;
+  position: absolute;
+  right: 90px;/*アイコン左右の位置調整*/
+  bottom: 40px;
+  background: none;
+  color: #565656;
+  border: none;
+  /* font-size: 20px;/*アイコンサイズ*/
+	font-family: HiraKakuProN-W6;
+  font-size: 14px;
+  text-align: left;
+}
+
+.fa-pencil-alt{
+  /* margin-left: 6px; */
+}
+
+.tweet{
+  width: 100px;
+  height: 35px;
+  position: absolute;
+  right: 90px;/*アイコン左右の位置調整*/
+  bottom: 10px;
+  background: none;
+  /* color: #565656; */
+  color: #55acee;
+  border: none;
+  /* font-size: 20px;/*アイコンサイズ*/
+	font-family: HiraKakuProN-W6;
+  font-size: 14px;
+  text-align: left;
+}
+
+.fa-twitter{
+  /* margin-left: 6px; */
+  color: #55acee;
 }
 
 /* ===== listpage(Soaring, search, New, Popular) ===== */
@@ -837,7 +1079,7 @@ table td{
   text-align: center;
 }
 .listswitch_number_now{
-  font-family: Hiragino Kaku Gothic Std;
+  font-family: HiraKakuProN-W6;
   color: black;
 }
 .fa-chevron-left{
@@ -854,10 +1096,10 @@ table td{
 .cp_iptxt3 {
 	position: relative;
 	width: 640px;
-	margin: 30px 80px;
+	margin: 0 0 30px;
 }
 .new_title {
-	font: 15px/24px Hiragino Kaku Gothic Std;
+	font: 15px/24px HiraKakuProN-W6;
 	box-sizing: border-box;
 	width: 100%;
 	/* padding: 0.3em; */
@@ -878,7 +1120,7 @@ table td{
 }
 
 .cp_iptxt3 textarea {
-	font: 15px/24px Hiragino Kaku Gothic Std;
+	font: 15px/24px HiraKakuProN-W6;
 	box-sizing: border-box;
 	width: 100%;
 	/* padding: 0.3em; */
@@ -899,7 +1141,7 @@ table td{
 }
 
 .new_element {
-	font: 15px/24px Hiragino Kaku Gothic Std;
+	font: 15px/24px HiraKakuProN-W6;
 	box-sizing: border-box;
 	width: 40%;
 	/* padding: 0.3em; */
@@ -920,7 +1162,7 @@ table td{
 }
 
 .new_number {
-	font: 15px/24px Hiragino Kaku Gothic Std;
+	font: 15px/24px HiraKakuProN-W6;
 	box-sizing: border-box;
 	width: 40%;
 	/* padding: 0.3em; */
@@ -940,11 +1182,34 @@ table td{
   padding: 5px;
 }
 
+.sbtn4{
+  width: 30px;
+  height: 24px;
+  position: absolute;
+  padding: 0 0 0 50px;
+  right: -25px;/*アイコン左右の位置調整*/
+  bottom: 12px;
+  background: none;
+  /* color: #f5f5f5; */
+  color: #565656;
+  opacity: 0;
+  border: none;
+  font-size: 15px;/*アイコンサイズ*/
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+}
+
+.article_link:hover button{
+  color: #565656;
+  opacity: 1;
+}
+
 /* === new checkbox === */
 
 .new_checkboxes {
   width: 640px;
-  margin: 24px 80px;
+  margin: 24px 0;
+
   /* background: #484848; */
   font-size: var(--fontsize-note);
   /* font-family: HiraKakuProN-W6; */
@@ -978,7 +1243,7 @@ input[type="checkbox"] + label:before {
   position: absolute;
   left: 5px;
   top: 5px;
-  opacity: .6;
+  opacity: var(--hover-opacity);
   -webkit-transition: all .12s, border-color .08s;
   transition: all .12s, border-color .08s;
 }

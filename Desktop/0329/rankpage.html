@@ -29,7 +29,7 @@
         <div class="header_account_logout">
           <!-- <div class="header_userimg"><img src="img/key.jpeg" class="header_userimg"></div> -->
           <div class="header_username">ログイン</div>
-          <a href="https://www.google.co.jp"></a>
+          <a href="login.html"></a>
         </div>
       </div>
     </div>
@@ -39,15 +39,17 @@
 
     <div class="ranking">
       <h2 class="ranking_title">フィンランド訪問回数</h2>
-      <div class="ranking_note">
-        行った回数を書き込んでください
-      </div>
+      <div class="ranking_note">行った回数を書き込んでください</div>
+      <div class="ranking_author">作成者：<div class="ranking_authorname">七条祐香</div></div>
     </div>
 
     <div class="article_container_sankasiyo">
       <p class="sankasiyo">投稿してランキングに参加しよう！</p>
+      <!-- <p class="sankasiyo">ランキングの作成・画像の投稿にはメンバー登録が必要です！
+また、メンバー登録をすると自分が参加したランキングなども確認できるようになります！
+メールアドレスを登録しないので、簡単・安心！(ただし、ニックネームやパスワードを忘れると一巻の終わりです！)
+(ここにtwitterログインボタンとフォームを置く)</p> -->
       <form action="/rankpage/11/" method="POST">
-        <input type="hidden" name="csrfmiddlewaretoken" value="PuSJXGhJpdUKQUvsSd54eayptUwmMmLzfjCMh6OFvzr4PDxc3zk9dWcMuVeXcE6w">
         <div class="cp_iptxt">
           <label class="ef">
             <input type="text" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="名前">
@@ -60,10 +62,9 @@
         </div>
       </form>
 
-      <div class="article_contents_more">
-        <div class="article_more">
-          <a href="/rankpage/1/" class="article_more-a">送信！</a>
-        </div>
+      <!-- もっと見る -->
+      <div class="article_more">
+        <a href="/rankpage/1/" class="article_more-a">送信！</a>
       </div>
 
     </div>

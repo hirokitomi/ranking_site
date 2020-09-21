@@ -4,7 +4,7 @@
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <meta charset="utf-8">
-  <title>indexだよ</title>
+  <title>userpageだよ</title>
 </head>
 
 <body>
@@ -13,44 +13,57 @@
   <a href ="/new/">新しいランキングを作る</a>
   <hr/> -->
 
-  <!-- header -->
-  <div class="header">
-    <div class="header_container">
-      <h1 class="header-headline">
-        <a><img src="img/logoBlack.svg" class="header_logo"></a>
-      </h1>
-      <!-- <ul class="header-nav-list">
-         <li class="header-nav-list-item">Home</li>
-         <li class="header-nav-list-item">About</li>
-         <li class="header-nav-list-item">Topic</li>
-      </ul> -->
-      <div class="header_right">
-        <div class="header_menu">
-          <div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div>
-          <a href="https://www.google.co.jp"></a>
-        </div>
-        <div class="header_account">
-          <div class="header_userimg"><img src="img/user.jpg" class="header_userimg"></div>
-          <div class="header_username">べっくは性欲オバケ！</div>
-          <a href="https://www.google.co.jp"></a>
+    <!-- header -->
+    <div class="header">
+      <div class="header_container">
+        <h1 class="header-headline">
+          <a><img src="img/logoBlack.svg" class="header_logo"></a>
+        </h1>
+        <!-- <ul class="header-nav-list">
+           <li class="header-nav-list-item">Home</li>
+           <li class="header-nav-list-item">About</li>
+           <li class="header-nav-list-item">Topic</li>
+        </ul> -->
+        <div class="header_right">
+
+          <div class="header_menu">
+              <label for="label1"><div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div></label>
+              <input type="checkbox" id="label1"/>
+              <div class="hidden_show">
+                <!--非表示ここから-->
+                <div class="header_menucorner"></div>
+                <div class="header_menucorner2"></div>
+                <div class="header_menubox">
+                  <form name="search1" method="post">
+                    <dl class="search1">
+                      <dt><input type="text" placeholder="ランキング検索"></dt>
+                      <dd><button><span></span></button></dd>
+                    </dl>
+                  </form>
+                  <div class="header_menulist"><a href="index.html"></a>トップページ</div>
+                  <div class="header_menulist"><a href="new.html"></a>ランキング作成</div>
+                  <div class="header_menuborder"></div>
+                  <div class="header_menulist"><a href="about.html"></a>about</div>
+                  <div class="header_menulist"><a href="rule.html"></a>利用規約・プライバシーポリシー</div>
+                  <div class="header_menuborder"></div>
+                  <div class="header_menulist"><a href="logout.html"></a>ログアウト</div>
+                </div>
+                <!--ここまで-->
+              </div>
+          </div>
+
+          <div class="header_account">
+            <div class="header_userimg"><img src="img/user.jpg" class="header_userimg"></div>
+            <div class="header_username">べっく</div>
+            <a href="userpage.html"></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
     <div class="main">
-
-      <div class="article_container_search">
-          <div class="cp_iptxt2">
-            <label class="ef2">
-              <input type="text" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="キーワード検索">
-            </label>
-          </div>
-          <button type="submit" class="sbtn2"><i class="fas fa-search"></i></button>
-      </div>
-
       <div class="category">
-        <h2 class="category_title">人気ランキング</h2>
+        <h2 class="category_title">急上昇ランキング</h2>
       </div>
 
       <div class="article_container">
@@ -80,7 +93,7 @@
           <a href="/rankpage/1/">
             <div class="article_contents">
               <h3 class="article_number number3">3</h2>
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -91,7 +104,7 @@
           <a href="/rankpage/1/">
             <div class="article_contents">
               <h3 class="article_number">4</h2>
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -102,7 +115,7 @@
           <a href="/rankpage/1/">
             <div class="article_contents">
               <h3 class="article_number">5</h2>
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -110,85 +123,10 @@
         </article>
 
         <!-- もっと見る -->
-        <article class="article_link_more">
-            <div class="article_contents_more">
-                <div class="article_more">
-                  <a href="/rankpage/1/" class="article_more-a">
-                    もっとみる
-                  </a>
-                </div>
-              </a>
-            </div>
-        </article>
+        <div class="article_more">
+          <a href="/rankpage/1/" class="article_more-a">もっとみる</a>
+        </div>
 
-      </div>
-
-      <div class="category">
-        <h2 class="category_title">おすすめランキング</h2>
-      </div>
-
-      <div class="article_container">
-        <article class="article_link">
-          <a href="/rankpage/3/">
-            <div class="article_contents">
-              <h3 class="article_title">速球ランキング</h2>
-              <p class="article_note">野球ボールの投aaaaaaa</p>
-              <p class="article_participants">1233455人</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="article_link">
-          <a href="/rankpage/2/">
-            <div class="article_contents">
-              <h3 class="article_title">身長ランキング</h2>
-              <p class="article_note">身長を記入して</p>
-              <p class="article_participants">6人</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="article_link">
-          <a href="/rankpage/1/">
-            <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
-              <p class="article_note">みなさんい</p>
-              <p class="article_participants">2人</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="article_link">
-          <a href="/rankpage/1/">
-            <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
-              <p class="article_note">みなさんい</p>
-              <p class="article_participants">2人</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="article_link">
-          <a href="/rankpage/1/">
-            <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
-              <p class="article_note">みなさんい</p>
-              <p class="article_participants">2人</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- もっと見る -->
-        <article class="article_link_more">
-            <div class="article_contents_more">
-                <div class="article_more">
-                  <a href="/rankpage/1/" class="article_more-a">
-                    もっとみる
-                  </a>
-                </div>
-              </a>
-            </div>
-        </article>
       </div>
 
       <div class="category">
@@ -219,7 +157,7 @@
         <article class="article_link">
           <a href="/rankpage/1/">
             <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -229,7 +167,7 @@
         <article class="article_link">
           <a href="/rankpage/1/">
             <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -239,7 +177,7 @@
         <article class="article_link">
           <a href="/rankpage/1/">
             <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -247,20 +185,13 @@
         </article>
 
         <!-- もっと見る -->
-        <article class="article_link_more">
-            <div class="article_contents_more">
-                <div class="article_more">
-                  <a href="/rankpage/1/" class="article_more-a">
-                    もっとみる
-                  </a>
-                </div>
-              </a>
-            </div>
-        </article>
+        <div class="article_more">
+          <a href="/rankpage/1/" class="article_more-a">もっとみる</a>
+        </div>
       </div>
 
       <div class="category">
-        <h2 class="category_title">急上昇ランキング</h2>
+        <h2 class="category_title">人気ランキング</h2>
       </div>
 
       <div class="article_container">
@@ -287,7 +218,7 @@
         <article class="article_link">
           <a href="/rankpage/1/">
             <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -297,7 +228,7 @@
         <article class="article_link">
           <a href="/rankpage/1/">
             <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -307,7 +238,7 @@
         <article class="article_link">
           <a href="/rankpage/1/">
             <div class="article_contents">
-              <h3 class="article_title">ちんこランキング</h2>
+              <h3 class="article_title">ランキング</h2>
               <p class="article_note">みなさんい</p>
               <p class="article_participants">2人</p>
             </div>
@@ -315,16 +246,9 @@
         </article>
 
         <!-- もっと見る -->
-        <article class="article_link_more">
-            <div class="article_contents_more">
-                <div class="article_more">
-                  <a href="/rankpage/1/" class="article_more-a">
-                    もっとみる
-                  </a>
-                </div>
-              </a>
-            </div>
-        </article>
+        <div class="article_more">
+          <a href="/rankpage/1/" class="article_more-a">もっとみる</a>
+        </div>
       </div>
     </div>
 </body>

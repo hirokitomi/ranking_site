@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <!-- <script src="juni.js" charset="utf-8"></script> -->
+  <title>loginだよ</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <div class="header">
+    <div class="header_container">
+      <h1 class="header-headline">
+        <a><img src="img/logoBlack.svg" class="header_logo"></a>
+      </h1>
+      <!-- <ul class="header-nav-list">
+         <li class="header-nav-list-item">Home</li>
+         <li class="header-nav-list-item">About</li>
+         <li class="header-nav-list-item">Topic</li>
+      </ul> -->
+      <div class="header_right">
+        <div class="header_menu">
+            <label for="label1"><div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div></label>
+            <input type="checkbox" id="label1"/>
+            <div class="hidden_show">
+              <!--非表示ここから-->
+              <div class="header_menucorner"></div>
+              <div class="header_menucorner2"></div>
+              <div class="header_menubox">
+                <form name="search1" method="post">
+                  <dl class="search1">
+                    <dt><input type="text" placeholder="ランキング検索"></dt>
+                    <dd><button><span></span></button></dd>
+                  </dl>
+                </form>
+                <div class="header_menulist"><a href="index.html"></a>トップページ</div>
+                <div class="header_menulist"><a href="new.html"></a>ランキング作成</div>
+                <div class="header_menuborder"></div>
+                <div class="header_menulist"><a href="about.html"></a>about</div>
+                <div class="header_menulist"><a href="rule.html"></a>利用規約・プライバシーポリシー</div>
+                <div class="header_menuborder"></div>
+                <div class="header_menulist"><a href="login.html"></a>ログイン</div>
+                <div class="header_menulist"><a href="signup.html"></a>新規登録</div>
+              </div>
+              <!--ここまで-->
+            </div>
+        </div>
+        <div class="header_account_logout">
+          <!-- <div class="header_userimg"><img src="img/key.jpeg" class="header_userimg"></div> -->
+          <div class="header_username">ログイン</div>
+          <a href="login.html"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="article_container flex">
+
+      <div class="login_left">
+        <div class="cp_iptxt">
+            <input type="text" name="" maxlength="20" required id="id_Post_name" placeholder="ユーザーID">
+        </div>
+        <div class="cp_iptxt">
+            <input type="password" name="" step="any" required id="id_password" placeholder="パスワード">
+        </div>
+        <div class="article_contents_more">
+          <div class="article_more">
+            <a href="login.html" class="article_more-a">ログイン</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="login_right">
+        <div class="login_right_note">
+          <p class="login_note"><a href="http://twitter.com">Twitter連携ログイン</a></p>
+          <p class="login_note"><a href="signup.html">新規登録</a></p>
+          <!-- <p class="login_note">ユーザーID/パスワードを</br>お忘れの方</p> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

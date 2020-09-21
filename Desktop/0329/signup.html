@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <meta charset="utf-8">
+  <!-- <script src="juni.js" charset="utf-8"></script> -->
+  <title>rankpageだよ</title>
+</head>
+
+<body>
+
+  <!-- header -->
+  <div class="header">
+    <div class="header_container">
+      <h1 class="header-headline">
+        <a><img src="img/logoBlack.svg" class="header_logo"></a>
+      </h1>
+      <!-- <ul class="header-nav-list">
+         <li class="header-nav-list-item">Home</li>
+         <li class="header-nav-list-item">About</li>
+         <li class="header-nav-list-item">Topic</li>
+      </ul> -->
+      <div class="header_right">
+        <div class="header_menu">
+          <div class="header_menuicon"><i class="fas fa-ellipsis-h"></i></div>
+          <a href="https://www.google.co.jp"></a>
+        </div>
+        <div class="header_account_logout">
+          <!-- <div class="header_userimg"><img src="img/key.jpeg" class="header_userimg"></div> -->
+          <div class="header_username">ログイン</div>
+          <a href="login.html"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="ranking">
+      <h2 class="ranking_title">フィンランド訪問回数</h2>
+      <div class="ranking_note">行った回数を書き込んでください</div>
+      <div class="ranking_author">作成者：<div class="ranking_authorname">七条祐香</div></div>
+    </div>
+
+    <div class="article_container_sankasiyo">
+      <p class="sankasiyo">投稿してランキングに参加しよう！</p>
+      <!-- <p class="sankasiyo">ランキングの作成・画像の投稿にはメンバー登録が必要です！
+また、メンバー登録をすると自分が参加したランキングなども確認できるようになります！
+メールアドレスを登録しないので、簡単・安心！(ただし、ニックネームやパスワードを忘れると一巻の終わりです！)
+(ここにtwitterログインボタンとフォームを置く)</p> -->
+      <form action="/rankpage/11/" method="POST">
+        <div class="cp_iptxt">
+          <label class="ef">
+            <input type="text" name="Post_name" maxlength="20" required id="id_Post_name" placeholder="名前">
+          </label>
+        </div>
+        <div class="cp_iptxt">
+          <label class="ef">
+            <input type="number" name="Post_element" step="any" required id="id_Post_element" placeholder="回数">
+          </label>
+        </div>
+      </form>
+
+      <div class="article_contents_more">
+        <div class="article_more">
+          <a href="/rankpage/1/" class="article_more-a">送信！</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
